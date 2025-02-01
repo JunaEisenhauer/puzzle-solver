@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane stylesheets="@../style/PuzzleSolverApp.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.junaeisenhauer.puzzlesolver.controller.PuzzleSolverController">
+    <top>
+        <ToolBar>
+            <items>
+                <Label id="title" text="%app.title"/>
+            </items>
+        </ToolBar>
+    </top>
+    <bottom>
+        <HBox id="actions">
+            <children>
+                <Button fx:id="shuffle" onAction="#onShuffle" text="%puzzle.shuffle"/>
+                <Button fx:id="reset" mnemonicParsing="false" onAction="#onReset" text="%puzzle.reset"/>
+                <Button fx:id="solve" onAction="#onSolve" text="%puzzle.solve"/>
+                <Button fx:id="cancel" disable="true" mnemonicParsing="false" onAction="#onCancel"
+                        text="%puzzle.cancel"/>
+                <ProgressIndicator fx:id="progress" visible="false"/>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <StackPane>
+            <children>
+                <FlowPane id="content">
+                    <children>
+                        <AnchorPane id="tiles" fx:id="tiles"/>
+                    </children>
+                </FlowPane>
+            </children>
+        </StackPane>
+    </center>
+    <right>
+        <VBox id="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <VBox id="settings">
+                    <children>
+                        <HBox styleClass="setting">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%settings.size"/>
+                                <TextField fx:id="gridSize" styleClass="numberField"/>
+                            </children>
+                        </HBox>
+                        <HBox styleClass="setting">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%settings.strategy"/>
+                                <ComboBox fx:id="algorithm"/>
+                            </children>
+                        </HBox>
+                        <HBox styleClass="setting">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%settings.shuffle.depth"/>
+                                <TextField fx:id="shuffleCount" styleClass="numberField"/>
+                            </children>
+                        </HBox>
+                        <VBox styleClass="setting">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%settings.tile.speed"/>
+                                <Slider fx:id="tileSpeed"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <VBox id="stats">
+                    <children>
+                        <HBox styleClass="stat">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="%stats.solve.duration"/>
+                                <Text fx:id="solveDuration" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                            </children>
+                        </HBox>
+                        <HBox styleClass="stat">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="stat"
+                                      text="%stats.solve.depth"/>
+                                <Text fx:id="solveDepth" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+        </VBox>
+    </right>
+</BorderPane>

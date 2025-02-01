@@ -1,0 +1,66 @@
+#title {
+    -fx-font-family: Roboto;
+    -fx-font-size: 30;
+}
+
+#content {
+    -fx-alignment: center;
+}
+
+#tiles {
+    -fx-border-insets: 8;
+    -fx-alignment: center;
+    -fx-border-width: 2;
+    -fx-border-color: black;
+}
+
+#actions {
+    -fx-padding: 8;
+    -fx-alignment: center;
+    -fx-spacing: 16;
+}
+
+.tile {
+    -fx-pref-width: 100;
+    -fx-pref-height: 100;
+    -fx-border-insets: 1;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-border-color: black;
+}
+
+.tileId {
+    -fx-font-family: "Roboto Condensed";
+    -fx-font-size: 25;
+}
+
+#sidebar {
+    -fx-spacing: 32;
+    -fx-padding: 8;
+}
+
+#sidebar * {
+    -fx-font-family: "Roboto Condensed";
+    -fx-font-size: 20;
+    -fx-alignment: center-left;
+}
+
+#settings {
+    -fx-spacing: 16;
+}
+
+.setting {
+    -fx-spacing: 8;
+}
+
+.numberField {
+    -fx-pref-width: 70;
+}
+
+#stats {
+    -fx-spacing: 8;
+}
+
+.stat {
+    -fx-spacing: 8;
+}
